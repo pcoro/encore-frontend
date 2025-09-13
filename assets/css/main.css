@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-xs: 30rem;
+    --animate-open-filters: open-filters 1s forwards;
+    --animate-hide-filters: hide-filters 1s forwards;
+
+    @keyframes open-filters {
+        0% {
+            margin-left: -304px;
+            opacity: 0;
+            visibility: hidden;
+        }
+        50%, 100% {
+            margin-left: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @keyframes hide-filters {
+        0% {
+            margin-left: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        50%, 100% {
+            margin-left: -304px;
+            opacity: 0;
+        }
+    }
+}
+
+html {
+    font-family: "Plus Jakarta Sans", "DM Sans", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    @apply appearance-none m-[0];
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
